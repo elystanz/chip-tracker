@@ -1,0 +1,25 @@
+:root {
+    --primary: #6dab29;
+    --secondary: #1a5254;
+}
+
+.container {
+    margin: 0 0;
+    
+}
+
+.sidebar-nav {
+    background-color: var(--primary);
+    color: white;
+
+}
+
+.main-content {
+    background-color: var(--secondary);
+    color: white;
+
+}
+
+.list-group {
+    color: var(--secondary);
+}
