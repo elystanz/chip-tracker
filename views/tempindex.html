@@ -6,6 +6,8 @@
 </head>
 
 <body>
+
+    <!-- header & navigation -->
     <header>
         <h1>Microchip Tracker!</h1>
         <nav>
@@ -23,6 +25,26 @@
         </nav>
     </header>
 
+    <!-- enter pet info to post data (vet only) -->
+    <section class="add-pet">
+        <form class="container">
+            <div class="input-group mb-3 row">
+                <input type="text" class="form-control col" placeholder="Pet Name">
+                <input type="text" class="form-control col" placeholder="Pet Breed">
+            </div>
+            <div class="microchip-input row">
+                <div class="form-check form-check-inline col-3">
+                    <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Microchipped</label>
+                </div>
+                <div class="form-check form-check-inline col-3">
+                    <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Not Microchipped</label>
+                </div>
+                <button type="submit" class="btn btn-outline-secondary col-3">Find Pet</button>
+            </div>
+        </form>
+    </section>
 </body>
 
 </html>

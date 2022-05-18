@@ -18,6 +18,8 @@ body {
     background-color: var(--quinary);
 }
 
+/* header & navigation style STARTS */
+
 header {
     padding: 25px;
     background-color: var(--quaternary);
@@ -62,23 +64,30 @@ header nav ul li a:hover {
 
 }
 
+/* header & nav style ENDS */
+
+
 .container {
-    margin: 0 0;
+    padding: 5px;
+    
+}
+
+.row {
+    margin: 0;
+    padding: 5px;
 
 }
 
-.sidebar-nav {
-    background-color: var(--primary);
-    color: white;
+.add-pet {
+    background-color: var(--quaternary);
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--secondary);
+    margin: 50px auto;
+    width: 50%;
 
 }
 
-.main-content {
-    background-color: var(--secondary);
-    color: white;
-
-}
-
-.list-group {
-    color: var(--secondary);
+.microchip-input {
+    display: flex;
+    justify-content: center;
 }
