@@ -21,12 +21,12 @@ body {
 /* header & navigation style STARTS */
 
 header {
-    padding: 25px;
+    padding: 15px;
     background-color: var(--quaternary);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -66,6 +66,11 @@ header nav ul li a:hover {
 
 /* header & nav style ENDS */
 
+img {
+    width: 80px;
+    height: 80px;
+
+}
 
 .container {
     padding: 5px;
@@ -78,7 +83,9 @@ header nav ul li a:hover {
 
 }
 
-.add-pet {
+.add-pet,
+.find-pets,
+.view-pets {
     background-color: var(--quaternary);
     border-radius: 5px;
     box-shadow: 0 0 10px var(--secondary);

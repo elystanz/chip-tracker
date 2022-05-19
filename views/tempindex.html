@@ -9,7 +9,10 @@
 
     <!-- header & navigation -->
     <header>
-        <h1>Microchip Tracker!</h1>
+        <h1>
+            <img src="../IMG_9107.JPG">
+            Microchip Tracker!
+        </h1>
         <nav>
             <ul>
                 <li>
@@ -28,22 +31,39 @@
     <!-- enter pet info to post data (vet only) -->
     <section class="add-pet">
         <form class="container">
+            <!-- take in pet name and breed info to post -->
             <div class="input-group mb-3 row">
                 <input type="text" class="form-control col" placeholder="Pet Name">
                 <input type="text" class="form-control col" placeholder="Pet Breed">
             </div>
+            <!-- take in radio box input to post -->
             <div class="microchip-input row">
                 <div class="form-check form-check-inline col-3">
                     <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                     <label class="form-check-label" for="inlineRadio1">Microchipped</label>
                 </div>
                 <div class="form-check form-check-inline col-3">
-                    <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Not Microchipped</label>
+                    <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Not Microchipped</label>
                 </div>
-                <button type="submit" class="btn btn-outline-secondary col-3">Find Pet</button>
+                <button type="submit" class="btn btn-outline-secondary col-3">Add Pet</button>
             </div>
         </form>
+    </section>
+
+    <section class="find-pets">
+        <div class="container">
+            <div class="input-group m-1 row">
+                <input type="text" class="form-control col-10" placeholder="Client Name">
+                <button type="submit" class="btn btn-outline-secondary col-2 mr-1" id="button-addon">Get Pet</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="view-pets">
+        <div class="container">
+            <p>this is where clients will be</p>
+        </div>
     </section>
 </body>
 
