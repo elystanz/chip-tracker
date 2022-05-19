@@ -11,6 +11,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
+    color: #6c757d;
 
 }
 
@@ -97,4 +98,8 @@ img {
 .microchip-input {
     display: flex;
     justify-content: center;
+}
+
+.card-body {
+    
 }
