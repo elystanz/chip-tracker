@@ -1,4 +1,4 @@
-{{!-- main page --}}
+{{!-- client login --}}
 <head>
     <meta charset="UTF-8"></meta>
     <title>Chip Tracker!</title>
@@ -30,13 +30,20 @@
         </nav>
     </header>
 
-    <div class="card container text-center hello-pet" style="width: 50rem; height: 25rem;">
-        <img src="../images/IMG_9081.JPG" class="card-img-top" style="height: 15rem; border-radius: 5px;">
-        <div class="card-body">
-            <h3 class="card-title">Chipper Pets</h3>
-            <h4 class="card-text">Let us help you help us find your pet</h4>
-        </div>
-    </div>
+    <section class="client-login">
+        <h4 class="text-center pt-3">Client Login</h4>
+        <form class="container p-2">
+            <div class="m-2">
+                <input type="text" class="form-control" id="inputClientFirst" placeholder="First name">
+            </div>
+            <div class="m-2">
+                <input type="text" class="form-control" id="inputClientLast" placeholder="Last name">
+            </div>
+            <div class="d-grid gap-2 col-2 mx-auto pb-3">
+                <button type="submit" class="btn btn-outline-secondary">Login</button>
+            </div>
+        </form>
+    </section>
 
 </body>
 

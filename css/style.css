@@ -87,7 +87,9 @@ img {
 .add-pet,
 .find-pets,
 .view-pets,
-.hello-pet {
+.hello-pet,
+.vet-login,
+.client-login {
     background-color: var(--quaternary);
     border-radius: 5px;
     box-shadow: 0 0 10px var(--secondary);
@@ -99,8 +101,4 @@ img {
 .microchip-input {
     display: flex;
     justify-content: center;
-}
-
-.card-body {
-    
 }
