@@ -67,16 +67,9 @@
 
     <!-- container that will dynamically generate pet info -- current text are placeholders -->
     <section class="view-pets">
-        <div class="container">
-            <div class="card">
-                <div class="card-body">
-                    <!-- this information will be dynamically created -->
-                    <h5 class="card-title">Pet Name</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Owner/Client Name</h6>
-                    <p class="card-text">Microchipped/Not Microchipped</p>
-                </div>
-            </div>
-        </div>
+        {{#each -- as ||}}
+        {{> pet-info}}
+        {{/each}}
     </section>
 
 </body>
