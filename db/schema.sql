@@ -2,7 +2,7 @@ DROP DATABASE if exists vets_db;
 
 CREATE DATABASE vets_db;
 
-USE vets_db
+USE vets_db;
 
 -- CREATE TABLE pet(
 --     id INT NOT NULL AUTO_INCREMENT,
