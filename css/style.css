@@ -86,9 +86,9 @@ img {
 
 .add-pet,
 .find-pets,
-.view-pets,
 .hello-pet,
 .vet-login,
+.view-pets,
 .client-login {
     background-color: var(--quaternary);
     border-radius: 5px;

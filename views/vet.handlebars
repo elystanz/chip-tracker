@@ -8,10 +8,10 @@
 
 <body>
 
-    <!-- header & navigation -->
+    {{!-- header & navigation --}}
     <header>
         <h1>
-            <!-- placeholder image -->
+            {{!-- placeholder image --}}
             <img src="../images/logo.png">
             Chipper Pets
         </h1>
@@ -30,15 +30,15 @@
         </nav>
     </header>
 
-    <!-- enter pet info to post data (vet only) -->
+    {{!-- enter pet info to post data (vet only) --}}
     <section class="add-pet">
         <form class="container">
-            <!-- take in pet name and breed info to post -->
+            {{!-- take in pet name and breed info to post --}}
             <div class="input-group mb-3 row">
                 <input type="text" class="form-control col" placeholder="Pet Name">
                 <input type="text" class="form-control col" placeholder="Pet Breed">
             </div>
-            <!-- take in radio box input to post -->
+            {{!-- take in radio box input to post --}}
             <div class="microchip-input row">
                 <div class="form-check form-check-inline col-3">
                     <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -48,13 +48,13 @@
                     <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                     <label class="form-check-label" for="inlineRadio1">Not Microchipped</label>
                 </div>
-                <!-- submit button to post pet to wall -->
+                {{!-- submit button to post pet to wall --}}
                 <button type="submit" class="btn btn-outline-secondary col-3">Add Pet</button>
             </div>
         </form>
     </section>
 
-    <!-- enter client name to get pet information -- can be utilized with User search -->
+    {{!-- enter client name to get pet information -- can be utilized with User search --}}
     <section class="find-pets">
         <div class="container">
             <div class="input-group m-1 row">
@@ -65,12 +65,9 @@
         </div>
     </section>
 
-    <!-- container that will dynamically generate pet info -- current text are placeholders -->
-    <section class="view-pets">
-        {{#each -- as ||}}
-        {{> pet-info}}
-        {{/each}}
-    </section>
+    {{!-- pet info container --}}
+        {{pet-info}}
+    </div>
 
 </body>
 
