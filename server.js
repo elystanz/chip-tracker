@@ -3,7 +3,7 @@ const express = require('express');
 // set up variable for handlebars module
 const exphbs = require('express-handlebars');
 
-const routes = require('./controllers/routes.js');
+const routes = require('./routes');
 const sequelize = require('./config/connection.js');
 
 const app = express();
