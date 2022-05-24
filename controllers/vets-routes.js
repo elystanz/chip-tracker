@@ -41,19 +41,69 @@ router.get("/:id", (req, res) => {
         id: req.params.id,
       },
     })
-    .then(data => {
+    .then((data) => {
+      if (!data) {
+        res.status(404).json({ message: "No pet found with this ID" })
+        return;
+      }
+      res.json(data)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.status(500).json(err)
+    })
+})
+
+router.post("/", (req, res) => {
+  pets
+    .create({
+      pet: req.body.pet,
+      owner: req.body.owner,
+      isMicrochipped: req.body.isMicrochipped,
+    })
+    .then((data) => res.json(data))
+    .catch((err) => {
+      console.log(err)
+      res.status(500).json(err)
+    })
+})
+
+router.put("/:id", (req, res) => {
+    pets.update(req.body,{
+        where: {
+            id: req.params.id,
+        },
+    })
+    .then((data) => {
         if (!data) {
-            res.status(404).json(
-                {message: 'No pet found with this ID'}
-            )
+          res.status(404).json({ message: "No pet found with this ID" })
+          return;
         }
         res.json(data)
-    })
-    .catch(err => {
+      })
+      .catch((err) => {
         console.log(err)
         res.status(500).json(err)
       })
-});
+  })
 
+  router.delete("/:id", (req, res) => {
+    pets.destroy(req.body,{
+        where: {
+            id: req.params.id,
+        },
+    })
+    .then((data) => {
+        if (!data) {
+          res.status(404).json({ message: "No pet found with this ID" })
+          return;
+        }
+        res.json(data)
+      })
+      .catch((err) => {
+        console.log(err)
+        res.status(500).json(err)
+      })
+  })
 
 module.exports = router
