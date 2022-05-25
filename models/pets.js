@@ -33,4 +33,4 @@ Pets.init(
     themodelName: "pets",
   }
 )
-module.exports = Pets
+module.exports = Pets;
