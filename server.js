@@ -21,13 +21,14 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(require("./controllers/pets-routes"));
+app.use(require("./controllers/logger"));
 
 app.get('/', (req, res) => {
   res.render('main');
 });
 
 // turn on routes
-app.use('/', routes)
+app.use(routes)
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {

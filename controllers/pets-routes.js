@@ -21,12 +21,15 @@ const pets = [
     },
 
 ]
+
+// render main page
 router.get('/', async (req, res) => {
     res.render('index', {
         pets
     })
 })
 
+// temporarily allow manual access to handlebars
 router.get('/vet-login', (req, res) => {
     res.render('vet-login', {
         pets
@@ -51,7 +54,7 @@ router.get('/client', (req, res) => {
     })
 })
 
-
+// get pet by ID
 router.get('/pet/:id', async (req, res) => {
     return res.render('pet', pets [req.params.id-1])
 
