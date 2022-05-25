@@ -11,9 +11,10 @@ const app = express()
 const PORT = process.env.PORT || 3001
 
 // accept handlebars
-const hbs = exphbs.create({})
+const hbs = exphbs.create({extname: 'handlebars', defaultLayout: 'main', layoutsDir: __dirname + '/views/layout'});
 
-app.engine("handlebars", hbs.engine)
+app.engine("handlebars", hbs.engine);
+app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "handlebars")
 
 app.use(express.json())
@@ -22,8 +23,12 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, "css")));
 app.use(require("./controllers/pets-routes"));
 
+app.get('/', (req, res) => {
+  res.render('main');
+});
+
 // turn on routes
-app.use(routes)
+app.use('/', routes)
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {

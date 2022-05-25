@@ -22,13 +22,16 @@ const pets = [
 
 ]
 router.get('/', async (req, res) => {
-    res.render('all', {
+    res.render('index', {
         pets
     })
-}) 
+})
+
+
 router.get('/pet/:id', async (req, res) => {
     return res.render('pet', pets [req.params.id-1])
 
 })
+
 
 module.exports = router;
