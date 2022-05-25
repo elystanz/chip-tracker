@@ -1,4 +1,4 @@
-{{!-- vet login --}}
+{{!-- vet main page --}}
 <head>
     <meta charset="UTF-8"></meta>
     <title>Chip Tracker!</title>
@@ -8,20 +8,24 @@
 
 <body>
 
-    <!-- header & navigation -->
+    {{!-- header & navigation --}}
     <header>
         <h1>
+<<<<<<< HEAD
             <!-- placeholder image -->
+=======
+            {{!-- placeholder image --}}
+>>>>>>> 5b9ed524e937606172adf30d1d746503080ac5db
             <img src="../images/logo.png">
             Chipper Pets
         </h1>
         <nav>
             <ul>
                 <li>
-                    <a href="">Vet Login</a>
+                    <a href="../views/vet-login.handlebars">Vet Login</a>
                 </li>
                 <li>
-                    <a href="">Client Login</a>
+                    <a href="../views/client-login.handlebars">Client Login</a>
                 </li>
                 <li>
                     <a href="">Contact Us</a>
@@ -30,15 +34,15 @@
         </nav>
     </header>
 
-    <!-- enter pet info to post data (vet only) -->
+    {{!-- enter pet info to post data (vet only) --}}
     <section class="add-pet">
         <form class="container">
-            <!-- take in pet name and breed info to post -->
+            {{!-- take in pet name and breed info to post --}}
             <div class="input-group mb-3 row">
                 <input type="text" class="form-control col" placeholder="Pet Name">
                 <input type="text" class="form-control col" placeholder="Pet Breed">
             </div>
-            <!-- take in radio box input to post -->
+            {{!-- take in radio box input to post --}}
             <div class="microchip-input row">
                 <div class="form-check form-check-inline col-3">
                     <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -48,13 +52,13 @@
                     <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                     <label class="form-check-label" for="inlineRadio1">Not Microchipped</label>
                 </div>
-                <!-- submit button to post pet to wall -->
+                {{!-- submit button to post pet to wall --}}
                 <button type="submit" class="btn btn-outline-secondary col-3">Add Pet</button>
             </div>
         </form>
     </section>
 
-    <!-- enter client name to get pet information -- can be utilized with User search -->
+    {{!-- enter client name to get pet information -- can be utilized with User search --}}
     <section class="find-pets">
         <div class="container">
             <div class="input-group m-1 row">
@@ -65,19 +69,11 @@
         </div>
     </section>
 
-    <!-- container that will dynamically generate pet info -- current text are placeholders -->
-    <section class="view-pets">
-        <div class="container">
-            <div class="card">
-                <div class="card-body">
-                    <!-- this information will be dynamically created -->
-                    <h5 class="card-title">Pet Name</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Owner/Client Name</h6>
-                    <p class="card-text">Microchipped/Not Microchipped</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    {{!-- pet info container --}}
+    {{!-- we would add js functionality to append all pets into this list, 
+    unless called by owner name which would then show a singular pet --}}
+        {{pet-info}}
+    </div>
 
 </body>
 

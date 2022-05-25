@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {{!-- vet login --}}
+=======
+{{!-- client main page --}}
+>>>>>>> 5b9ed524e937606172adf30d1d746503080ac5db
 <head>
     <meta charset="UTF-8"></meta>
     <title>Chip Tracker!</title>
@@ -8,20 +12,25 @@
 
 <body>
 
-    <!-- header & navigation -->
+    {{!-- header & navigation --}}
     <header>
         <h1>
+<<<<<<< HEAD
             <!-- placeholder image -->
             <img src="../images/IMG_9107.JPG">
+=======
+            {{!-- placeholder image --}}
+            <img src="../images/logo.png">
+>>>>>>> 5b9ed524e937606172adf30d1d746503080ac5db
             Chipper Pets
         </h1>
         <nav>
             <ul>
                 <li>
-                    <a href="">Vet Login</a>
+                    <a href="../views/vet-login.handlebars">Vet Login</a>
                 </li>
                 <li>
-                    <a href="">Client Login</a>
+                    <a href="../views/client-login.handlebars">Client Login</a>
                 </li>
                 <li>
                     <a href="">Contact Us</a>
@@ -30,6 +39,7 @@
         </nav>
     </header>
 
+<<<<<<< HEAD
     <!-- enter pet info to post data (vet only) -->
     <section class="add-pet">
         <form class="container">
@@ -78,6 +88,23 @@
             </div>
         </div>
     </section>
+=======
+    {{!-- enter client name to get pet information --}}
+    <section class="find-pets">
+        <div class="container">
+            <div class="input-group m-1 row">
+                <input type="text" class="form-control col-10" placeholder="First & Last Name">
+                <!-- submit button to get pet from wall -->
+                <button type="submit" class="btn btn-outline-secondary col-2 mr-1" id="button-addon">Get Pet</button>
+            </div>
+        </div>
+    </section>
+
+    {{!-- pet info container --}}
+    {{!-- for clients, we should add functionality to ONLY call their pet when the name is submitted --}}
+        {{pet-info}}
+    </div>
+>>>>>>> 5b9ed524e937606172adf30d1d746503080ac5db
 
 </body>
 
