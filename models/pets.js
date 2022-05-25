@@ -32,5 +32,6 @@ Pets.init(
     undescored: true,
     themodelName: "pets",
   }
-)
+);
+
 module.exports = Pets;
