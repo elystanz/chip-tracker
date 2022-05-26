@@ -63,7 +63,11 @@ router.post("/", (req, res) => {
       owner: req.body.owner,
       isMicrochipped: req.body.isMicrochipped,
     })
-    .then((data) => res.json(data))
+    .then((dbPetsData) => {req.session.save(()=>{
+      req.session.pet = dbPetsData.pet;
+      req.session.owner = dbPetsData.owner;
+      req.session.loggedIn = true;
+    })})
     .catch((err) => {
       console.log(err)
       res.status(500).json(err)

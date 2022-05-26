@@ -1,5 +1,19 @@
 const express = require("express")
 const path = require("path")
+const session = require('express-session')
+const SequelizeStore = require('connect-session-sequelize')
+const sess = {
+  secret: 'dream team',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+
+}
+
+app.use(session(sess))
 
 // set up variable for handlebars module
 const exphbs = require("express-handlebars")
