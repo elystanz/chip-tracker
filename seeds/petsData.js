@@ -1,3 +1,7 @@
+const Pets = require('../models')
+
+const petsdata = 
+
 [
     {
         "pet": "Jake",
@@ -15,3 +19,6 @@
         "isMicrochipped": "true"
     }
 ]
+
+const seedPet = () => Pets.bulkCreate(petsdata)
+module.exports = seedPet;

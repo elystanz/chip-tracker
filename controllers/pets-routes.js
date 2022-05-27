@@ -1,39 +1,17 @@
 const router = require('express').Router()
-const pets = [
-    {
+const Pets = require('../models')
+const withAuth = require('../utils/auth');
 
-        pets: "Jake",
-        owner: "Finn",
-        isMicrochipped: true,
-    },
-
-    {
-        pets: "Jake",
-        owner: "Finn",
-        isMicrochipped: true, 
-
-    },
-
-    {
-        pets: "Jake",
-        owner: "Finn",
-        isMicrochipped: true,
-    },
-
-]
 
 // render main page
 router.get('/', async (req, res) => {
-    res.render('index', {
-        pets
-    })
+
+    res.render('index')
 })
 
 // temporarily allow manual access to handlebars
 router.get('/vet-login', (req, res) => {
-    res.render('vet-login', {
-        pets
-    })
+    res.render('vet-login')
 })
 
 router.get('/vet', (req, res) => {
