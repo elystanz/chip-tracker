@@ -89,7 +89,8 @@ img {
 .hello-pet,
 .vet-login,
 .view-pets,
-.client-login {
+.client-login,
+.vet-logout {
     background-color: var(--quaternary);
     border-radius: 5px;
     box-shadow: 0 0 10px var(--secondary);
