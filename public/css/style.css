@@ -102,3 +102,13 @@ img {
     display: flex;
     justify-content: center;
 }
+
+.main-link {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.main-link:hover {
+    color: var(--tertiary);
+    text-decoration: none;
+}
