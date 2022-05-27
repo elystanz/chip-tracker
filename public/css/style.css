@@ -90,7 +90,8 @@ img {
 .vet-login,
 .view-pets,
 .client-login,
-.vet-logout {
+.vet-logout,
+.contact {
     background-color: var(--quaternary);
     border-radius: 5px;
     box-shadow: 0 0 10px var(--secondary);
@@ -112,4 +113,18 @@ img {
 .main-link:hover {
     color: var(--tertiary);
     text-decoration: none;
+}
+
+.emails,
+.email-list {
+    color: var(--secondary);
+    text-decoration: none;
+    list-style: none;
+    font-size: 25px;
+}
+
+.emails:hover {
+    color: var(--tertiary);
+    text-decoration: none;
+    list-style: none;
 }

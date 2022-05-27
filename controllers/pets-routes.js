@@ -32,6 +32,12 @@ router.get('/client', (req, res) => {
     })
 })
 
+router.get('/contact', (req, res) => {
+    res.render('contact', {
+        pets
+    })
+})
+
 // get pet by ID
 router.get('/pet/:id', async (req, res) => {
     return res.render('pet', pets [req.params.id-1])
