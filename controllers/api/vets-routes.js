@@ -1,5 +1,8 @@
 const router = require("express").Router()
 const  Pets  = require("../../models/pets")
+const fs = require('fs')
+const path = require('path')
+let vetsData = require('../../db/vets.json')
 
 router.get("/", (req, res) => {
   Pets
@@ -49,6 +52,19 @@ router.post("/vets-login", (req, res) => {
       console.log(err)
       res.status(500).json(err)
     })
+})
+
+router.post("/vets-login", (req, res) => {
+  const { pet, owner, isMicrochipped } = req.body;
+  if (pet && owner && isMicrochipped) {
+    const newPost = {
+      pet, 
+      owner,
+      isMicrochipped,
+    }
+    vetsData.push(newPost)
+    fs.writeFileSync(path.join(__dirname, '../../db/vets.json'),JSON.stringify(vetsData))
+  }
 })
 
 router.put("/:id", (req, res) => {
