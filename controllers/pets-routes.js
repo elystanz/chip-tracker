@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const Pets = require('../models/pets')
-const withAuth = require('../utils/auth');
+const withAuth = require('../utils/authetntication');
 
 
 // render main page
