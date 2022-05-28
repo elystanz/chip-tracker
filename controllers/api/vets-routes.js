@@ -1,29 +1,6 @@
 const router = require("express").Router()
 const  Pets  = require("../../models/pets")
 
-// const pets = [
-//   {
-//     owner_name: "Francis Hubble",
-//     pet_name: "Oreo",
-//     micro_status: true,
-//   },
-//   {
-//     owner_name: "Alice Wally",
-//     pet_name: "Peaches",
-//     micro_status: true,
-//   },
-//   {
-//     owner_name: "Billy Jimbles",
-//     pet_name: "Rex",
-//     micro_status: false,
-//   },
-// ]
-
-// router.get("/", async (req, res) => {
-//   const petInfo = pets[req.params.id - 1]
-//   res.render("petInfo", petInfo)
-// })
-
 router.get("/", (req, res) => {
   Pets
     .findAll()
@@ -56,7 +33,7 @@ router.get("/:id", (req, res) => {
     })
 })
 
-router.post("/", (req, res) => {
+router.post("/vets-login", (req, res) => {
   Pets
     .create({
       pet: req.body.pet,

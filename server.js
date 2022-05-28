@@ -40,7 +40,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, "/public")))
 app.use(require("./controllers/pets-routes"))
-app.use(require("./controllers/logger"))
 
 app.get("/", (req, res) => {
   res.render("main")
