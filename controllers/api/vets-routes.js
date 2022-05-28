@@ -1,28 +1,8 @@
 const router = require("express").Router()
 const  Pets  = require("../../models/pets")
-
-// const pets = [
-//   {
-//     owner_name: "Francis Hubble",
-//     pet_name: "Oreo",
-//     micro_status: true,
-//   },
-//   {
-//     owner_name: "Alice Wally",
-//     pet_name: "Peaches",
-//     micro_status: true,
-//   },
-//   {
-//     owner_name: "Billy Jimbles",
-//     pet_name: "Rex",
-//     micro_status: false,
-//   },
-// ]
-
-// router.get("/", async (req, res) => {
-//   const petInfo = pets[req.params.id - 1]
-//   res.render("petInfo", petInfo)
-// })
+const fs = require('fs')
+const path = require('path')
+let vetsData = require('../../db/vets.json')
 
 router.get("/", (req, res) => {
   Pets
@@ -72,6 +52,19 @@ router.post("/", (req, res) => {
       console.log(err)
       res.status(500).json(err)
     })
+})
+
+router.post("/vets-login", (req, res) => {
+  const { pet, owner, isMicrochipped } = req.body;
+  if (pet && owner && isMicrochipped) {
+    const newPost = {
+      pet, 
+      owner,
+      isMicrochipped,
+    }
+    vetsData.push(newPost)
+    fs.writeFileSync(path.join(__dirname, '../../db/vets.json'),JSON.stringify(vetsData))
+  }
 })
 
 router.put("/:id", (req, res) => {
