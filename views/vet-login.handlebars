@@ -8,7 +8,8 @@
         <div class="m-2">
             <input type="password" class="form-control" id="inputVetPassword" placeholder="Password">
             <input type="checkbox" onclick="showHide()">Show Password
-{{!-- insert code to add show/hide functionality to password for SIGNUP--}}
+
+            {{!-- insert code to add show/hide functionality to password for LOGIN--}}
             <script>
                 function showHide() {
                     var showIt = document.getElementById("inputVetPassword");
@@ -21,7 +22,7 @@
             </script>
 
         </div>
-        <div class="d-grid gap-2 col-2 mx-auto pb-3">
+        <div class="d-grid gap-2 col-2 mx-auto pb-3 d-flex justify-content-center">
             <button type="submit" class="btn btn-outline-secondary">Login</button>
         </div>
     </form>
@@ -50,7 +51,7 @@
             </script>
 
         </div>
-        <div class="d-grid gap-2 col-2 mx-auto pb-3">
+        <div class="d-grid gap-3 col-6 mx-auto pb-3 d-flex justify-content-center">
             <button type="submit" class="btn btn-outline-secondary">Sign Up</button>
         </div>
     </form>
