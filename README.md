@@ -25,14 +25,14 @@ The plans for future development include allowing vets to update and delete pet 
 Please feel free to make a pull request or submit an issue to troubleshoot any bugs you come across.
 
 If you are planning to pull the code and make adjustments to submit, ensure that you use the command `npm i` to install the dependencies within this application:
-    - bootstrap (^5.1.3)
-    - connect-session-sequelize (^7.1.3)
-    - dotenv (^16.0.1)
-    - express (^4.18.1)
-    - express-handlebars (^6.0.6)
-    - express-session (^1.17.3)
-    - mysql2 (^2.3.3)
-    - sequelize (^6.20.1)
+* bootstrap (^5.1.3)
+* connect-session-sequelize (^7.1.3)
+* dotenv (^16.0.1)
+* express (^4.18.1)
+* express-handlebars (^6.0.6)
+* express-session (^1.17.3)
+* mysql2 (^2.3.3)
+* sequelize (^6.20.1)
 
 These dependencies are saved within the package.json file and should install upon using the command `npm i`.
 
