@@ -73,7 +73,13 @@ router.post('/signup', (req, res) => {
     name: req.body.username,
     password: req.body.password
   })
-    .then(dbUserData => res.redirect('/'))
+    .then(async () =>{ 
+      let pets = await Pets.findAll();
+      pets = pets.map(pet => pet.get({plain: true}));
+
+      console.log(pets);
+      res.render('vet', {pets});
+    })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
