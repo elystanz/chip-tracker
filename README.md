@@ -14,6 +14,9 @@ Chipper pets is a microchip tracking application designed to be a veternarians' 
 Currently, the app allows vets to post and retrieve pet data, giving them the ability to log their clients and their medical information. The clients are able to insert their full name and in return are presented with their pet's information, but are unable to edit, delete, or post to the wall.
 
 ## <a id="application">Application</a>
+![chipper_pets](https://user-images.githubusercontent.com/95983252/171037490-bce8b667-fa8d-4280-9938-a1e8cc178f45.gif)
+
+This walkthrough demonstrates the application functionality in Insomnia. As of this update, user authentication has not been added. The vet main page is navigated through Insomnia's get request. This will be remedied as soon as possible!
 
 ## <a id="roadmap">Roadmap</a>
 The plans for future development include allowing vets to update and delete pet information as needed, as well as create a more involved medical record; showing vaccination status, next visit, past ailments, et cetera. The client will also be able to see this and it will make for a more useful application on the client side, as well as give vets a better idea of their client's needs.
