@@ -18,16 +18,18 @@ const loginFormHandler = async (event) => {
 
 const signupFormHandler = async (event) => {
     event.preventDefault();
+
     const username = document.querySelector('#sign-inputVetUser').value.trim()
-    const password = document.querySelector('#sign-inputVetPasword').value.trim()
+    const password = document.querySelector('#sign-inputVetPassword').value.trim()
+    console.log({username, password});
     if (username && password){
-        const response = await fetch('/api/vets',{
+        const response = await fetch('/api/vets/signup',{
             method: 'POST',
             body: JSON.stringify({username, password}),
             headers: {'Content-Type': 'application/json'},
         });
         if (response.ok){
-            document.location.replace('/');
+            // document.location.replace('/');
         }else {
             alert('Failed to sign up.')
         }
@@ -35,4 +37,5 @@ const signupFormHandler = async (event) => {
 };
 
 document.querySelector('.login').addEventListener('submit',loginFormHandler)
-document.querySelector('.signup').addEventListener('submit',signupFormHandler)
+
+document.querySelector('.signup').addEventListener('submit',(e) => signupFormHandler(e))

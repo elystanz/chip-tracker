@@ -3,7 +3,7 @@ const path = require("path")
 const session = require("express-session")
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const exphbs = require("express-handlebars")
-
+const bodyParser = require('body-parser')
 const routes = require("./controllers")
 const sequelize = require("./config/connection.js")
 
@@ -39,11 +39,13 @@ app.set("view engine", "handlebars")
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, "/public")))
-app.use(require("./controllers/pets-routes"))
-
+// app.use(routes)
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 app.get("/", (req, res) => {
   res.render("main")
 })
+
 
 // turn on routes
 app.use(routes)

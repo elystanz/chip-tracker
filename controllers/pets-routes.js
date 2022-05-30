@@ -1,12 +1,24 @@
 const router = require('express').Router()
 const Pets = require('../models/pets')
 const withAuth = require('../utils/authetntication');
+const fs = require('fs')
+
+
 
 
 // render main page
 router.get('/', async (req, res) => {
 
     res.render('index')
+    console.log('but')
+})
+
+router.post('/',async(req,res) =>{
+    const username = req.body.username
+    const password = req.body.password
+    const users = []
+    users.push(username)
+    users.push(password)
 })
 
 // temporarily allow manual access to handlebars

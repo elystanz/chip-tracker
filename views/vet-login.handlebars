@@ -16,15 +16,16 @@
 
 <section class="vet-login">
     <h4 class="text-center pt-3">Vet Sign-up</h4>
-    <form class="container p-2 signup">
+    <form class="container p-2 signup" onsubmit="signupFormHandler">
         <div class="m-2">
-            <input type="text" class="form-control" id="sign-inputVetUser" placeholder="Choose Username">
+            <input name = 'username'type="text" class="form-control" id="sign-inputVetUser" placeholder="Choose Username">
         </div>
         <div class="m-2">
-            <input type="text" class="form-control" id="sign-inputVetPassword" placeholder="Choose Password">
+            <input name = 'password' type="text" class="form-control" id="sign-inputVetPassword" placeholder="Choose Password">
         </div>
         <div class="d-grid gap-2 col-2 mx-auto pb-3">
             <button type="submit" class="btn btn-outline-secondary">Sign Up</button>
         </div>
     </form>
+    <script src="/js/login.js"></script>
 </section>
