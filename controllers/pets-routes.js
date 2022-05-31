@@ -10,8 +10,8 @@ const fs = require('fs')
 router.get('/', async (req, res) => {
 
     res.render('index')
-    console.log('but')
 })
+
 
 router.post('/',async(req,res) =>{
     const username = req.body.username
@@ -69,6 +69,7 @@ router.get('/pet/:id', async (req, res) => {
     return res.render('pet', pets [req.params.id-1])
 
 })
+
 
 
 module.exports = router;

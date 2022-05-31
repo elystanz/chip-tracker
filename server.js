@@ -32,6 +32,7 @@ const hbs = exphbs.create({
   layoutsDir: __dirname + "/views/layout",
 })
 
+
 app.engine("handlebars", hbs.engine)
 app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "handlebars")
@@ -47,10 +48,14 @@ app.get("/", (req, res) => {
 })
 
 
+
+
 // turn on routes
 app.use(routes)
+
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"))
 })
+

@@ -86,14 +86,35 @@ router.post('/signup', (req, res) => {
     });
 });
 
-// router.post('/signup',(req,res)=>{
-//   const username =  req.body.username
-//   const password = req.body.password
-//   // res.json(username)
-//   // res.json(password)
-//   console.log(username)
-//   console.log(password)
-// })
+router.post('/login', (req, res) => {
+  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
+  Vet.findOne({
+    where: {
+      name: req.body.username
+    }
+  }).then(dbUserData => {
+    if (!dbUserData) {
+      res.status(400).json({ message: 'No user with that username!' });
+      return;
+    }
+
+    const validPassword = dbUserData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect password!' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+  
+      res.json({ vet: dbUserData, message: 'You are now logged in!' });
+    });
+  });
+});
+
 
 router.put("/:id", (req, res) => {
     Pets.update(req.body,{
