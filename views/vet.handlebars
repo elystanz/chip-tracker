@@ -2,20 +2,20 @@
 
 {{!-- enter pet info to post data (vet only) --}}
 <section class="add-pet">
-    <form class="container">
+    <form class="container addPet">
         {{!-- take in pet name and breed info to post --}}
         <div class="input-group mb-3 row">
-            <input type="text" class="form-control col" placeholder="Pet Name">
-            <input type="text" class="form-control col" placeholder="Pet Breed">
+            <input id="petName" type="text" class="form-control col" placeholder="Pet Name">
+            <input id = 'ownerName'  type="text" class="form-control col" placeholder="Owner Name">
         </div>
         {{!-- take in radio box input to post --}}
         <div class="microchip-input row">
             <div class="form-check form-check-inline col-3">
-                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <input type="radio" class="form-check-input" name="chipped" id="inlineRadio1 chipped" value="true">
                 <label class="form-check-label" for="inlineRadio1">Microchipped</label>
             </div>
             <div class="form-check form-check-inline col-3">
-                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <input type="radio" class="form-check-input" name="inlineRadioOptions notChipped" id="inlineRadio1 notChipped" value="false">
                 <label class="form-check-label" for="inlineRadio1">Not Microchipped</label>
             </div>
             {{!-- submit button to post pet to wall --}}
@@ -51,3 +51,4 @@ unless called by owner name which would then show a singular pet --}}
         </div>
     </div>
 </section>
+<script src="/js/add-pet.js"></script>

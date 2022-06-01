@@ -68,11 +68,11 @@ router.get("/:id", (req, res) => {
 //   }
 // })
 router.post('/signup', (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   Vet.create({
     name: req.body.username,
     password: req.body.password
   })
+  console.log('jus')
     .then(async () =>{ 
       let pets = await Pets.findAll();
       pets = pets.map(pet => pet.get({plain: true}));
@@ -85,6 +85,26 @@ router.post('/signup', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.post('/add-pet',(req,res)=>{
+  Pets.create({
+    pet: req.body.petName,
+    owner: req.body.ownerName,
+    isMicrochipped: req.body.chipped
+  })
+  .then(async () =>{ 
+    let pets = await Pets.findAll();
+    pets = pets.map(pet => pet.get({plain: true}));
+
+    console.log(pets);
+    res.render('vet', {pets});
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
+
 
 router.post('/login', (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
