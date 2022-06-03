@@ -87,17 +87,20 @@ router.post('/signup', (req, res) => {
 });
 
 router.post('/add-pet',(req,res)=>{
+  console.log(req.body);
+  let {petName, ownerName, chippedValue} = req.body;
+
   Pets.create({
-    pet: req.body.petName,
-    owner: req.body.ownerName,
-    isMicrochipped: req.body.chipped
+    pet: petName,
+    owner: ownerName,
+    isMicrochipped: chippedValue
   })
   .then(async () =>{ 
     let pets = await Pets.findAll();
     pets = pets.map(pet => pet.get({plain: true}));
 
     console.log(pets);
-    res.render('vet', {pets});
+    // res.render('vet', {pets});
   })
   .catch(err => {
     console.log(err);
